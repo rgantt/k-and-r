@@ -9,13 +9,15 @@
  * variable or a symbolic parameter?
  */
  
-#define N 4
+#define TAB_STOP_LENGTH 4
 
 main() {
-    int c, i;
+    int line_position = 0, distance_to_tab_stop, c;
     while ((c = getchar()) != EOF) {
+        line_position++;
         if ('\t' == c) {
-            for (i = 0; i < N; i++) {
+            distance_to_tab_stop = line_position % TAB_STOP_LENGTH;
+            for (; distance_to_tab_stop >= 0; distance_to_tab_stop--) {
                 printf(" ");
             }
         } else {
