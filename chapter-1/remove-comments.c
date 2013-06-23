@@ -14,14 +14,11 @@
 #define IN_LONG_COMMENT 3
 #define MAYBE_LEAVING_COMMENT 4
 #define DEFINITELY_LEAVING_COMMENT 5
-
-// this should be removed
  
 main() {
     int c, last_c, state = NOT_IN_COMMENT, last_state = NOT_IN_COMMENT;
     
     while ((c = getchar()) != EOF) {
-        // this's gotta go
         if ('/' == c) {
             if (NOT_IN_COMMENT == state) {
                 last_state = state;
